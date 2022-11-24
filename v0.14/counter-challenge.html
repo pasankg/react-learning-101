@@ -31,26 +31,18 @@
           count: 0,
         };
       },
-      addOne: function (event) {
-        // let countValue = document.getElementById("count-holder").textContent;
-        // countValue = parseInt(countValue) + 1;
+      incrementCount: function (value) {
         this.setState({
-          count: this.state.count + 1
-        });
-      },
-      addSix: function (event) {
-        // let countValue = document.getElementById("count-holder").textContent;
-        // countValue = parseInt(countValue) + 6;
-        this.setState({
-          count: this.state.count + 6
+          count: this.state.count + value
         });
       },
       render: function () {
         return (
           <div>
             <h2>{this.state.count}</h2>
-            <input type="button" value="Add 1" onClick={this.addOne} />
-            <input type="button" value="Add 6" onClick={this.addSix} />
+            // Use bind() to pass in this component as the first parameter along with the value to increment by.
+            <input type="button" value="Add 1" onClick={this.incrementCount.bind(this, 1)} />
+            <input type="button" value="Add 6" onClick={this.incrementCount.bind(this, 6)} />
           </div>
         );
       },
