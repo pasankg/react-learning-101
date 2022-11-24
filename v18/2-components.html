@@ -23,15 +23,30 @@
 <body>
  <div id="app"></div>
  <script>
-  // Reusing the code v1.0
+  /*********************
+  // Reusing the code - v1.0
   function Message(message) {
    return React.createElement('div', { className: 'bold-text' }, message); 
   }
   // Create an object that describes an element using React.
-  let helloWorldElement = Message('Hello World !')
+  let helloWorldElement = Message('Hello World !');
 
+  // End of v1.0 
+  ************************/
+
+  // Intro to porps.
+  function Message(props) {
+   // Components retuns react elements.
+   return React.createElement('div', { className: 'bold-text' }, props.message); 
+  }
+  
+  // Create a react element.
+  let helloWorldElement = React.createElement(Message, {message: 'Hello World !'});
+
+  console.log(helloWorldElement);
+  
   // Render element.
-  ReactDOM.createRoot(document.getElementById('app')).render(helloWorldElement)
+  ReactDOM.createRoot(document.getElementById('app')).render(helloWorldElement);
  </script>
 
 </body>
