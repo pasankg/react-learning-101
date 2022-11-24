@@ -13,12 +13,24 @@
 
  <!-- Load our React component. -->
  <script src="like_button.js"></script>
+ <style>
+  .bold-text {
+   font-weight: 700;
+  }
+ </style>
 </head>
 
 <body>
  <div id="app"></div>
  <script>
-  let helloWorldElement = React.createElement('div', { id: 'message' }, 'Hello World!')
+  // Reusing the code v1.0
+  function Message(message) {
+   return React.createElement('div', { className: 'bold-text' }, message); 
+  }
+  // Create an object that describes an element using React.
+  let helloWorldElement = Message('Hello World !')
+
+  // Render element.
   ReactDOM.createRoot(document.getElementById('app')).render(helloWorldElement)
  </script>
 
