@@ -23,25 +23,23 @@
 <body>
  <div id="app"></div>
  <script>
-  /*********************
-  // Reusing the code - v1.0
-  function Message(message) {
-   return React.createElement('div', { className: 'bold-text' }, message); 
-  }
-  // Create an object that describes an element using React.
-  let helloWorldElement = Message('Hello World !');
-
-  // End of v1.0 
-  ************************/
-
   // Intro to porps.
   function Message(props) {
    // Components retuns react elements.
    return React.createElement('div', { className: 'bold-text' }, props.message);
   }
 
-  // Create a react element.
-  let helloWorldElement = React.createElement(Message, { message: 'Hello World !' });
+  /*********
+   *   Create a react element v 1.0
+   * This is a lot of code to write with React compared to the vanilla version we had before.
+   * So here's where JSX comes to action.
+   * We use JSX syntax to shorten the code and get the maximum out of React.
+ 
+     let helloWorldElement = React.createElement(Message, { message: 'Hello World !' });
+  ***/
+
+  // Intro to JSX.
+  let helloWorldElement = <Message message="Hello World !" />
 
   // Render element.
   ReactDOM.createRoot(document.getElementById('app')).render(helloWorldElement);
