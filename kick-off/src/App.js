@@ -40,7 +40,7 @@ import Navbar from './Navbar'
 function App() {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar title="Using Fragments"/>
       <div className='bg-dark'>Hello World !</div>
     </Fragment>
   )
