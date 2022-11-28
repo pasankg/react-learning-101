@@ -36,12 +36,14 @@ export default App;
 // Use react fragments to return multiple elements without using a div wrapper.
 import { Fragment } from 'react'
 import Navbar from './Navbar'
+import List from './List'
 
 function App() {
+  const items = ['Car', 'Bus', 'Plane', 'Motorcycle'];
   return (
     <Fragment>
-      <Navbar title="Using Fragments"/>
-      <div className='bg-dark'>Hello World !</div>
+      <Navbar title="Using Fragments" />
+      <List title="Vehicles" items={items} />
     </Fragment>
   )
 }
