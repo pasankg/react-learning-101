@@ -39,11 +39,16 @@ import Navbar from './Navbar'
 import List from './List'
 
 function App() {
-  const items = ['Car', 'Bus', 'Plane', 'Motorcycle'];
+  let Vehicles = ['Car', 'Bus', 'Plane', 'Motorcycle'];
+  let Electronics = ['Laptop', 'Desktop', 'Mobile Phone', 'Smart Watch'];
+  let list = List({ title: 'Electronics', items: Electronics });
   return (
     <Fragment>
       <Navbar title="Using Fragments" />
-      <List title="Vehicles" items={items} />
+      <List title="Vehicles" items={Vehicles} />
+
+      {/* We can also equate a component with a function */}
+      {list}
     </Fragment>
   )
 }
