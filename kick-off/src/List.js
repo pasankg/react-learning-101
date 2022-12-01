@@ -15,15 +15,25 @@ function List(props) {
   <ListItem key={index.toString()} item={item} />
  );
 
+ // Modify class name.
+ let css = `bg-${props.background}`;
+
  return (
   // Another syntax to indicate fragments is to use <>
   <>
-   <h3>{props.title}</h3>
+   <h3 className={css}>{props.title}</h3>
    <ul>{batch}</ul>
   </>
  )
 }
 
+// Set Default props.
+List.defaultProps = {
+ items: [],
+ background: 'primary'
+}
+
+// Prop validation.
 List.propTypes = {
  items: PropTypes.array.isRequired,
  title: PropTypes.string.isRequired,

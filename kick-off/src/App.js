@@ -52,7 +52,7 @@ function App() {
       <Navbar title="Using Fragments" />
       <div className='container'>
         {/* Option 1: Simple way to render the list component.  */}
-        <List title="Vehicles" items={Vehicles} background='primary' specialProp={specialData} />
+        <List title="Vehicles" items={Vehicles} background='danger' specialProp={specialData} />
 
         {/* Option 2: Advance way is to equate a component with a function */}
         {list}
