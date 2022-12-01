@@ -1,4 +1,3 @@
-import './ListItem';
 import ListItem from './ListItem';
 
 // Creates a list component.

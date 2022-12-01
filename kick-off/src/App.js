@@ -39,15 +39,21 @@ import Navbar from './Navbar'
 import List from './List'
 
 function App() {
+  // Option 1
   let Vehicles = ['Car', 'Bus', 'Plane', 'Motorcycle'];
+  
+  // Option 2
   let Electronics = ['Laptop', 'Desktop', 'Mobile Phone', 'Smart Watch'];
   let list = List({ title: 'Electronics', items: Electronics });
+  
   return (
     <Fragment>
       <Navbar title="Using Fragments" />
+      
+      {/* Option 1: Simple way to render the list component.  */}
       <List title="Vehicles" items={Vehicles} />
 
-      {/* We can also equate a component with a function */}
+      {/* Option 2: Advance way is to equate a component with a function */}
       {list}
     </Fragment>
   )
