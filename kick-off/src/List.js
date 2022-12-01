@@ -1,3 +1,6 @@
+import './ListItem';
+import ListItem from './ListItem';
+
 // Creates a list component.
 function List(props) {
  // Inside the component the props are read only.
@@ -7,7 +10,7 @@ function List(props) {
  // What we can do is use states to re-render data into the component.
  // React is uni directional; data goes from parent to child.
  let batch = props.items.map((item, index) =>
-  <li key={index}>{item}</li>
+  <ListItem key={index.toString()} item={item} />
  );
 
  return (
