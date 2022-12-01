@@ -37,6 +37,7 @@ export default App;
 import { Fragment } from 'react'
 import Navbar from './Navbar'
 import List from './List'
+import Counter from './Counter';
 
 function App() {
   // Option 1
@@ -50,12 +51,17 @@ function App() {
   return (
     <Fragment>
       <Navbar title="Using Fragments" />
+      <div className="clearfix"></div>
       <div className='container'>
         {/* Option 1: Simple way to render the list component.  */}
         <List title="Vehicles" items={Vehicles} background='danger' specialProp={specialData} />
 
         {/* Option 2: Advance way is to equate a component with a function */}
         {list}
+      </div>
+      <hr></hr>
+      <div className='container'>
+        <Counter />
       </div>
     </Fragment>
   )
