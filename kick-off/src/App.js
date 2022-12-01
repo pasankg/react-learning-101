@@ -41,20 +41,22 @@ import List from './List'
 function App() {
   // Option 1
   let Vehicles = ['Car', 'Bus', 'Plane', 'Motorcycle'];
-  
+  let specialData = { name: '', age: 10 };
+
   // Option 2
   let Electronics = ['Laptop', 'Desktop', 'Mobile Phone', 'Smart Watch'];
-  let list = List({ title: 'Electronics', items: Electronics });
-  
+  let list = List({ title: 'Electronics', items: Electronics, background: 'primary' });
+
   return (
     <Fragment>
       <Navbar title="Using Fragments" />
-      
-      {/* Option 1: Simple way to render the list component.  */}
-      <List title="Vehicles" items={Vehicles} />
+      <div className='container'>
+        {/* Option 1: Simple way to render the list component.  */}
+        <List title="Vehicles" items={Vehicles} background='primary' specialProp={specialData} />
 
-      {/* Option 2: Advance way is to equate a component with a function */}
-      {list}
+        {/* Option 2: Advance way is to equate a component with a function */}
+        {list}
+      </div>
     </Fragment>
   )
 }

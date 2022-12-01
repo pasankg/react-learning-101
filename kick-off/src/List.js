@@ -1,5 +1,8 @@
 import ListItem from './ListItem';
 
+// Validating Props.
+import PropTypes from 'prop-types';
+
 // Creates a list component.
 function List(props) {
  // Inside the component the props are read only.
@@ -20,4 +23,19 @@ function List(props) {
   </>
  )
 }
+
+List.propTypes = {
+ items: PropTypes.array.isRequired,
+ title: PropTypes.string.isRequired,
+ background: PropTypes.oneOf([
+  'primary',
+  'secondary'
+ ]),
+ // shape is used to validate objects by letting us describe how the object should be.
+ specialProp: PropTypes.shape({
+  name: PropTypes.string,
+  age: PropTypes.number
+ })
+};
+
 export default List;
