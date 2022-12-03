@@ -20,10 +20,11 @@ function Counter(props) {
  // setTimeout(() => setCounter(counter += props.countBy), 1000);
 
  // Manual setCounter function.
- function countUp() {
+ function countUp(e) {
+  console.log(e.target)
   setCounter(counter + props.countBy)
  }
- function countDown() {
+ function countDown(e) {
   setCounter(counter - props.countBy)
  }
 

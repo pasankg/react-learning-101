@@ -37,7 +37,12 @@ export default App;
 import { Fragment } from 'react'
 import Navbar from './Navbar'
 import List from './List'
+
+// Use counter function component.
 import Counter from './Counter';
+
+// Use counter class.
+import CounterMod from './CounterClass';
 
 function App() {
   // Option 1
@@ -54,7 +59,7 @@ function App() {
       <div className="clearfix"></div>
       <div className='container'>
         {/* Option 1: Simple way to render the list component.  */}
-        <List title="Vehicles" items={Vehicles} background='danger' specialProp={specialData} />
+        <List title="Vehicles" items={Vehicles} background='secondary' specialProp={specialData} />
 
         {/* Option 2: Advance way is to equate a component with a function */}
         {list}
@@ -62,6 +67,10 @@ function App() {
       <hr></hr>
       <div className='container'>
         <Counter />
+      </div>
+      <hr></hr>
+      <div className='container'>
+        <CounterMod />
       </div>
     </Fragment>
   )
