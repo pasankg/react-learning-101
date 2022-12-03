@@ -24,8 +24,9 @@ class Counter extends Component {
   This is a fix to stop js from throwing an error
   Uncaught TypeError: Cannot read properties of undefined (reading 'setState')
   for the onclick functions.
+  Reason is the onclick functions are not executing within the context of the component.
   */
-  this.countUp = this.countUp.bind(this)
+  // this.countUp = this.countUp.bind(this)
   this.countDown = this.countDown.bind(this)
  }
 
@@ -48,7 +49,22 @@ class Counter extends Component {
     <h4>{this.state.counter}</h4>
 
     {/* Props are camelcased, therefore instead of onclick, use onClick */}
-    <button className='btn btn-primary' onClick={this.countUp}>Count Up</button>
+
+    {/* 
+    The onclick functions are NOT executing within the context of the component.
+    We can use two options to resolve this.
+    
+    Option 1:
+    We can use an arrow function to wrap the calling of the methods, 
+    so that it will reference the compoent function rather than undefined.  
+    
+    Option 2:
+    Binding the methods to the component object.
+    */}
+
+    {/* Option 1 */}
+    <button className='btn btn-primary' onClick={()=>this.countUp()}>Count Up</button>
+    {/* Option 2 - See line 30 */}
     <button className='btn btn-danger' onClick={this.countDown}>Count Down</button>
 
    </>
