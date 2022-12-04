@@ -6,6 +6,7 @@ function App() {
   const [brands, setBrands] = useState(['Honda', 'KTM']);
 
   function updateBrands(newBrand) {
+    console.log('updateBrands - onSubmit');
     setBrands([...brands, newBrand]);
   }
 
