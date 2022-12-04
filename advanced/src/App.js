@@ -7,20 +7,23 @@ function App() {
 
   function updateBrands(newBrand) {
     console.log('updateBrands - onSubmit');
+    // Add the new brand to the brands array.
     setBrands([...brands, newBrand]);
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className='container'>
-          <AddItemForm buttonText="Add Brand" onSubmit={updateBrands} />
-        </div>
-        <div className='container'>
-          <List title="Motorcycle Brands" items={brands} />
+    <>
+      <div className="container">
+        <div className="row">
+          <div className='container'>
+            <AddItemForm buttonText="Add Brand" onSubmit={updateBrands} />
+          </div>
+          <div className='container'>
+            <List title="Motorcycle Brands" items={brands} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
