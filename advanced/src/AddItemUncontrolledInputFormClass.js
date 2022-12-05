@@ -1,4 +1,5 @@
 import React from 'react';
+import { categoryStyles } from './vehicleStyles';
 
 class AddItemUnControlledForm extends React.Component {
  constructor(props) {
@@ -56,9 +57,9 @@ class AddItemUnControlledForm extends React.Component {
          className='custom-select mr-sm-2'
         >
          <option value=''></option>
-         <option value='adv'>Adventure</option>
-         <option value='sports'>Sports</option>
-         <option value='touring'>Touring</option>
+         <option style={categoryStyles.adventure} value='adventure'>Adventure</option>
+         <option style={categoryStyles.sports} value='sports'>Sports</option>
+         <option style={categoryStyles.touring} value='touring'>Touring</option>
         </select>
        </div>
 
