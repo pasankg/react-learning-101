@@ -8,7 +8,8 @@ function List(props) {
  return (
   <>
    <div className='container'>
-    <h2>{props.title}</h2>
+    {/* Apply the global style in Navbar module css */}
+    <h2 className='italicText'>{props.title}</h2>
     <ul>
      {batch}
     </ul>

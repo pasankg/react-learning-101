@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Navbar from './Navbar';
 import List from './List';
 import AddItemForm from './AddItemControlledInputFormClass';
 import AddItemFormUncontrolled from './AddItemUncontrolledInputFormClass';
@@ -13,8 +14,9 @@ function App() {
   }
 
   return (
-    <>
-      <div className="container">
+    <>      
+      <Navbar />
+      <div className="container mt-5">
         <div className="row">
           <AddItemForm buttonText="Add Brand" onSubmit={updateBrands} />
           <List title="Motorcycle Brands" items={brands} />

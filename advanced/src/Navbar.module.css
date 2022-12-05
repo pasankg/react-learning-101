@@ -1,0 +1,16 @@
+/* Local style */
+.boldWhiteText {
+ font-weight: 800 !important;
+ color: whitesmoke !important;
+}
+
+/* Global Style */
+:global .italicText {
+ font-style: italic !important;
+}
+
+/* Style extending from Bootstrap. */
+.h4Custom {
+ composes: h4 from './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+ font-family: 'Courier New', Courier, monospace !important;
+}
