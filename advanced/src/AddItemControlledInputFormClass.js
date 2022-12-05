@@ -6,7 +6,7 @@ class AddItemForm extends Component {
 
   // Set intial value for newBrand variable.
   this.state = {
-   newBrand: '',
+   newBrand: { title: '' },
   };
 
   this.handleChange = this.handleChange.bind(this);
@@ -17,7 +17,7 @@ class AddItemForm extends Component {
  // Updates newBrand state as user key in text.
  handleChange(e) {
   this.setState({
-   newBrand: e.target.value
+   newBrand: { title: e.target.value }
   });
  }
 
@@ -26,6 +26,7 @@ class AddItemForm extends Component {
   e.preventDefault();
 
   console.log('handleClick - before onSubmit');
+  console.log(this.state.newBrand.title);
 
   // Call the onSubmit function to pass in the variable to update the state.
   this.props.onSubmit(this.state.newBrand);
@@ -34,7 +35,7 @@ class AddItemForm extends Component {
 
   // Reset the newBrand value.
   this.setState({
-   newBrand: ''
+   newBrand: { title: '' },
   })
 
  }
@@ -42,22 +43,28 @@ class AddItemForm extends Component {
  render() {
   return (
    <>
-    <form classaName='form-inline'>
+    <div className='container'>
+     <div className='mt-3 mb-3'>
+      <form classaName='form-inline'>
 
-     <input
-      type='text'
-      className='form-control-inline'
-      value={this.state.newBrand}
-      onChange={this.handleChange}
-     />
+       <input
+        type='text'
+        className='form-control-inline'
+        value={this.state.newBrand.title}
+        onChange={this.handleChange}
+       />
 
-     <button
-      className='btn btn-primary'
-      onClick={this.handleClick}
-     >{this.props.buttonText}
-     </button>
+       <div className="clearfix"></div>
 
-    </form>
+       <button
+        className='btn btn-primary mt-3'
+        onClick={this.handleClick}
+       >{this.props.buttonText}
+       </button>
+
+      </form>
+     </div>
+    </div>
    </>
   );
  }

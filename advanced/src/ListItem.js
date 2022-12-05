@@ -1,6 +1,9 @@
 function ListItem(props) {
  return (
-  <li key={props.index}> {props.item} </li>
+  <li>
+   <h4>{props.item.title} </h4>
+   {props.item.text}
+  </li>
  )
 }
 export default ListItem;
