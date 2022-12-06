@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react';
 import WeatherWidget from './WeatherWidgetClass';
+import WeatherWidgetFunction from './WeatherWidgetFunction';
 
 function WeatherApp() {
  // Initial location is set here.
- const [location, setLocation] = useState('Colombo');
+ const [location, setLocation] = useState('');
 
  /* 
 Using refs so that the form can have uncontrolled input
@@ -38,7 +39,11 @@ which will only update data upon form submit and not on value change.
         </button>
        </div>
       </form>
-      <WeatherWidget location={location} />
+      {/* Class component */}
+      {/* <WeatherWidget location={location} /> */}
+
+      {/* Function component */}
+      <WeatherWidgetFunction location={location} />
      </div>
     </div>
    </div>

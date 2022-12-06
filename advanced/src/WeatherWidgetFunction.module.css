@@ -1,0 +1,4 @@
+.cardBodyCenter {
+ composes: h4 from './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+ text-align: center;
+}
