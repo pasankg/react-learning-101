@@ -2,8 +2,8 @@ import { useState, useRef } from 'react';
 import WeatherWidget from './WeatherWidgetClass';
 
 function WeatherApp() {
- // Initial location is set to empty.
- const [location, setLocation] = useState('');
+ // Initial location is set here.
+ const [location, setLocation] = useState('Colombo');
 
  /* 
 Using refs so that the form can have uncontrolled input
