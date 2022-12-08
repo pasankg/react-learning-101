@@ -9,8 +9,12 @@ import { useParams } from 'react-router-dom';
 export default function BikeResults() {
   const params = useParams();
   return (
-    <>
-      <h4>{params.bikeTopic}</h4>
+    <>      
+      <h4>This is the Bike Result Page</h4>
+      <p>This is a child route of ./BikesLayout</p>
+      <p>It inherits data from ./App file</p>
+
+      <p>The parameter for ':bikeTopic' is <b>{params.bikeTopic}</b></p>
     </>
   );
 }
