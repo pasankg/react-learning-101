@@ -19,6 +19,9 @@ export default function Navbar(props) {
         <li className="nav-item">
          <Link to="/news/javascript" className="nav-link">Javascript News</Link>
         </li>
+        <li className="nav-item">
+         <Link to="/bikes" className="nav-link">Bike News</Link>
+        </li>
        </ul>
       </div>
      </nav>

@@ -8,7 +8,7 @@ export default function NewsLayout(props) {
     <>
       <h4>This is from the News Layout</h4>
       <p>This is a child route of ./Layout</p>
-      <p>It inherits data from ./Layout file</p>
+      <p>It inherits content from ./Layout file</p>
       <Outlet />
     </>
   );
