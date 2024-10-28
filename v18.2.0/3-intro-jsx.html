@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>React v18</title>
+ <!-- Load React. -->
+ <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+ <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+ <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+ <!-- Load our React component. -->
+ <script src="like_button.js"></script>
+ <style>
+  .bold-text {
+   font-weight: 700;
+  }
+ </style>
+</head>
+
+<body>
+ <div id="app"></div>
+ <script>
+  // Intro to porps.
+  function Message(props) {
+   // Components retuns react elements.
+   return React.createElement('div', { className: 'bold-text' }, props.message);
+  }
+
+  /*********
+   *   Create a react element v 1.0
+   * This is a lot of code to write with React compared to the vanilla version we had before.
+   * So here's where JSX comes to action.
+   * We use JSX syntax to shorten the code and get the maximum out of React.
+ 
+     let helloWorldElement = React.createElement(Message, { message: 'Hello World !' });
+  ***/
+
+  // Intro to JSX.
+  let helloWorldElement = <Message message="Hello World !" />
+
+  // Render element.
+  ReactDOM.createRoot(document.getElementById('app')).render(helloWorldElement);
+ </script>
+
+</body>
+
+</html>

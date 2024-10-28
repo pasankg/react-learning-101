@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>React Tutorial</title>
+  <script src="https://fb.me/react-0.14.7.js"></script>
+  <script src="https://fb.me/react-dom-0.14.7.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.2/browser.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <p>
+      Example using React v0.14.7
+      Curretly it's on v18.2.0
+    </p>
+  </div>
+  <!-- Element to bind and render React component -->
+  <div id="app"></div>
+
+  <!-- React component -->
+  <script type="text/babel">
+    // Use Reacts createClass method that takes a object specification.
+    // Consists mainly of render method which is a function.
+    // createClass depricated since React v15
+    // https://reactjs.org/docs/react-without-es6.html
+    var CounterComponent = React.createClass({
+      getInitialState: function () {
+        return {
+          count: 0,
+        };
+      },
+      incrementCount: function (value) {
+        this.setState({
+          count: this.state.count + value
+        });
+      },
+      render: function () {
+        return (
+          <div>
+            <h2>{this.state.count}</h2>
+            // Use bind() to pass in this component as the first parameter along with the value to increment by.
+            <input type="button" value="Add 1" onClick={this.incrementCount.bind(this, 1)} />
+            <input type="button" value="Add 6" onClick={this.incrementCount.bind(this, 6)} />
+          </div>
+        );
+      },
+    });
+
+    // Render the react component into HTML Dom element.
+    ReactDOM.render(<CounterComponent />, document.getElementById("app"));
+
+  </script>
+</body>
+
+</html>
